@@ -10,3 +10,7 @@
 .react-jinke-music-player-mobile-operation {
   display: none;
 }
+
+spna.group.prev-audio svg {
+  display: none;
+}

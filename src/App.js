@@ -116,7 +116,7 @@ function App() {
     showProgressLoadBar: true,
 
     // play button display of the audio player panel   [type `Boolean` default `true`]
-    showPlay: false,
+    showPlay: true,
 
     // reload button display of the audio player panel   [type `Boolean` default `true`]
     showReload: false,
@@ -181,80 +181,16 @@ function App() {
     // https://github.com/SortableJS/Sortable#options
     sortableOptions: {},
 
-    // Music is downloaded handle
-    onAudioDownload(audioInfo) {
-      console.log("audio download", audioInfo);
-    },
-
-    // audio play handle
-    onAudioPlay(audioInfo) {
-      console.log("audio playing", audioInfo);
-    },
-
-    // audio pause handle
-    onAudioPause(audioInfo) {
-      console.log("audio pause", audioInfo);
-    },
-
-    // When the user has moved/jumped to a new location in audio
-    onAudioSeeked(audioInfo) {
-      console.log("audio seeked", audioInfo);
-    },
-
-    // When the volume has changed  min = 0.0  max = 1.0
-    onAudioVolumeChange(currentVolume) {
-      console.log("audio volume change", currentVolume);
-    },
-
-    // The single song is ended handle
-    onAudioEnded(currentPlayId, audioLists, audioInfo) {
-      console.log("audio ended", currentPlayId, audioLists, audioInfo);
-    },
-
-    // audio load abort
-    onAudioAbort(currentPlayId, audioLists, audioInfo) {
-      console.log("audio abort", currentPlayId, audioLists, audioInfo);
-    },
-
     // audio play progress handle
     // eslint-disable-next-line no-unused-vars
     onAudioProgress(audioInfo) {
       // console.log('audio progress', audioInfo)
     },
 
-    // audio reload handle
-    onAudioReload(audioInfo) {
-      console.log("audio reload:", audioInfo);
-    },
-
-    // audio load failed error handle
-    onAudioError(errMsg, currentPlayId, audioLists, audioInfo) {
-      console.error(
-        "audio error",
-        errMsg,
-        currentPlayId,
-        audioLists,
-        audioInfo
-      );
-    },
-
     // theme change handle
     // onThemeChange(theme) {
     //   console.log('theme change:', theme)
     // },
-
-    onAudioListsChange(currentPlayId, audioLists, audioInfo) {
-      console.log("audio lists change:", currentPlayId, audioLists, audioInfo);
-    },
-
-    onAudioPlayTrackChange(currentPlayId, audioLists, audioInfo) {
-      console.log(
-        "audio play track change:",
-        currentPlayId,
-        audioLists,
-        audioInfo
-      );
-    },
 
     // onPlayModeChange(playMode) {
     //   console.log('play mode change:', playMode)
@@ -263,18 +199,6 @@ function App() {
     // onModeChange(mode) {
     //   console.log('mode change:', mode)
     // },
-
-    onAudioListsPanelChange(panelVisible) {
-      console.log("audio lists panel visible:", panelVisible);
-    },
-
-    onAudioListsSortEnd(oldIndex, newIndex) {
-      console.log("audio lists sort end:", oldIndex, newIndex);
-    },
-
-    onAudioLyricChange(lineNum, currentLyric) {
-      console.log("audio lyric change:", lineNum, currentLyric);
-    },
 
     // custom music player root node
     getContainer() {
@@ -287,14 +211,8 @@ function App() {
      * audio.playbackRate = 1.5  // set play back rate
      * audio.crossOrigin = 'xxx' // config cross origin
      */
-    getAudioInstance(audio) {
-      console.log("audio instance", audio);
-    },
 
     onBeforeDestroy(currentPlayId, audioLists, audioInfo) {
-      console.log("onBeforeDestroy currentPlayId: ", currentPlayId);
-      console.log("onBeforeDestroy audioLists: ", audioLists);
-      console.log("onBeforeDestroy audioInfo: ", audioInfo);
       return new Promise((resolve, reject) => {
         // your custom validate
         // eslint-disable-next-line no-alert
@@ -306,14 +224,6 @@ function App() {
           reject();
         }
       });
-    },
-
-    onDestroyed(currentPlayId, audioLists, audioInfo) {
-      console.log("onDestroyed:", currentPlayId, audioLists, audioInfo);
-    },
-
-    onCoverClick(mode, audioLists, audioInfo) {
-      console.log("onCoverClick: ", mode, audioLists, audioInfo);
     },
   };
 
