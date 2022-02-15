@@ -164,7 +164,7 @@ function App() {
      * https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
      * [type `String` default '(max-width: 768px) and (orientation : portrait)']
      */
-    mobileMediaQuery: "(max-width: 1024px)",
+    mobileMediaQuery: "(max-width: 3000px)",
 
     // Audio volume with fade in and fade out [type `{ fadeIn: number, fadeOut: number }` default `{ fadeIn: 0, fadeOut: 0 }`]
     volumeFade: {
